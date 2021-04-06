@@ -1,0 +1,4 @@
+def print_percentage(bank_data):
+    months = int(bank_data[0])
+    profits = int(bank_data[1])
+    losses = int(bank_data[2])
