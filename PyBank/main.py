@@ -5,7 +5,7 @@ bank_csv = os.path.join("..", "Resources", "budget_data.csv")
 
 # lists for csv file values
 months = []
-profit = []
+profit = 0
 profit_change = []
 var = list()
 count = 0
@@ -17,19 +17,20 @@ def print_percentage(bank_data):
 
 
 
-with open(budget_data_csv, 'r') as csvfile:
+with open(bank_csv, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
-    header = next(csvreader)
+    header = next(csvreader) 
 
-Print("Financial Analysis")
-Print("----------------------------")  
+    Print("Financial Analysis")
+    Print("----------------------------")  
 
 #read through the data
-for row in csvreader:
-    count = count + 1
+    for row in csvreader:
+        count = count + 1
+        profit = profit +int(row[1])
+        #months.append = (row[0])
+        #profit.append = (int(row[1]))
 
-    months.append = (row[0])
-    profit.append = (int(row[1]))
 
 #total_months = len(months)   
 #print(f"Month Count: {months}")  
@@ -40,17 +41,17 @@ for row in csvreader:
 
 
 
-max_change = max(profit_change)
-min_change = min(profit_change)
+# max_change = max(profit_change)
+# min_change = min(profit_change)
 
-if min_change == row[0]:
-    print_percentages(row)
+# if min_change == row[0]:
+#     print_percentages(row)
 
-if max_change == row[0]:
-    print_percentages(row)
+# if max_change == row[0]:
+#     print_percentages(row)
 
-import sys
-original_stdout = sys.stdout
+# import sys
+# original_stdout = sys.stdout
 
 
 
