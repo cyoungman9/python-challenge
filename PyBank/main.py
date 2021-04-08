@@ -16,9 +16,6 @@ min_profit = 999999
 max_date = ""
 min_date = ""
 
-# def print_percentage(bank_data):
-#     months = int(bank_data[0])
-#     profits = int(bank_data[1])
 
 with open(bank_csv, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
@@ -45,9 +42,6 @@ with open(bank_csv, 'r') as csvfile:
     avg_profit= sum(profit_change[1:])/ len(profit_change[1:])
 
 
-# import sys
-# original_stdout = sys.stdout
-
 
 
 print(f"Total Months: {count}")
@@ -58,3 +52,8 @@ print(f"Greatest Increase in Profits: {max_date} + ${(max_profit)}")
 print(f"Greatest Decrease in Profits: {min_date} + ${(min_profit)}")
 
 
+
+
+import sys
+sys.stdout = open('bank_csv.txt', 'w')
+print('Write this to file.')
