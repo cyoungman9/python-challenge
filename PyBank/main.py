@@ -46,14 +46,19 @@ with open(bank_csv, 'r') as csvfile:
 
 print(f"Total Months: {count}")
 print(f"Total: {profit}")
-# print(profit_change)
 print(f"Average Change:{avg_profit:.2f}")
 print(f"Greatest Increase in Profits: {max_date} + ${(max_profit)}")
 print(f"Greatest Decrease in Profits: {min_date} + ${(min_profit)}")
 
 
 
+#sys.stdout
 
 import sys
-sys.stdout = open('bank_csv.txt', 'w')
-print('Write this to file.')
+with open('bank_csv.txt', 'w') as txt_file:
+    txt_file.write(f"Total Months: {count}\n")
+    txt_file.write(f"Total: {profit}\n")
+    txt_file.write(f"Average Change:{avg_profit:.2f}\n")
+    txt_file.write(f"Greatest Increase in Profits: {max_date} + ${(max_profit)}\n")
+    txt_file.write(f"Greatest Decrease in Profits: {min_date} + ${(min_profit)}\n")
+
