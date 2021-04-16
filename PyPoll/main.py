@@ -23,8 +23,8 @@ with open(poll_csv, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     header = next(csvreader)
 
-    print("Election Results")
-    print("-------------------------")
+
+    
 
     for row in csvreader:
         count = count + 1
@@ -43,7 +43,8 @@ with open(poll_csv, 'r') as csvfile:
     total_Li = Li_vote/count * 100 
     total_OTooley = OTooley_vote/count * 100 
 
-
+    print("Election Results")
+    print("-------------------------")
 
     print(f"Total Votes: {count}")
     print(f"-------------------------")
@@ -63,6 +64,8 @@ with open(poll_csv, 'r') as csvfile:
 
 import sys
 with open('poll_csv.txt', 'w') as txt_file:
+    txt_file.write(f"Election Results\n")
+    txt_file.write(f"-------------------------\n")
     txt_file.write(f"Total Votes: {count}\n")
     txt_file.write(f"-------------------------\n")
     txt_file.write(f"Khan:{total_khan:.3f}% {khan_vote}\n")
